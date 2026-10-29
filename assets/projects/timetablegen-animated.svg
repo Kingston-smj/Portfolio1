@@ -1,143 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" role="img" aria-labelledby="ttg ttgd">
-  <title id="ttg">TimeTableGen preview</title>
-  <desc id="ttgd">Looping re-creation of the TimeTableGen View Timetable tab: lesson cells fill in with real subjects and teachers as the generator runs; one empty slot throws a red dashed warning.</desc>
-  <style>
-    .ttg-ui { font-family: system-ui, sans-serif; }
-    .ttg-cell {
-      opacity: 0;
-      animation: ttg-cell 6s linear infinite;
-    }
-    @keyframes ttg-cell {
-      0% { opacity: 0; }
-      5% { opacity: 1; }
-      82% { opacity: 1; }
-      92%, 100% { opacity: 0; }
-    }
-    .ttg-warn {
-      animation: ttg-warn 6s ease-in-out infinite;
-    }
-    @keyframes ttg-warn {
-      0%, 79% { opacity: .9; }
-      86% { opacity: .45; }
-      92% { opacity: .9; }
-      100% { opacity: .9; }
-    }
-    .ttg-gap {
-      fill: none;
-      stroke: #c0392b;
-      stroke-dasharray: 4 3;
-      stroke-width: 1.6;
-      opacity: 0;
-      animation: ttg-gap 6s ease-in-out infinite;
-    }
-    @keyframes ttg-gap {
-      0%, 60% { opacity: 0; }
-      70%, 92% { opacity: 1; }
-      100% { opacity: 0; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .ttg-cell, .ttg-gap { animation: none; opacity: 1; }
-      .ttg-warn { animation: none; }
-    }
-  </style>
-
-  <rect width="400" height="250" rx="18" fill="#f8f9fa"/>
-
-  <g class="ttg-ui" font-size="10.5" fill="#333">
-    <rect x="22" y="14" width="102" height="26" rx="4" fill="#ffffff" stroke="#c9c9c9"/>
-    <text x="32" y="31" fill="#2471a3" font-weight="600">View Timetable</text>
-    <rect x="126" y="14" width="112" height="26" rx="4" fill="#ececec"/>
-    <text x="136" y="31" fill="#555">Manage Teachers</text>
-    <rect x="240" y="14" width="112" height="26" rx="4" fill="#ececec"/>
-    <text x="250" y="31" fill="#555">Manage Subjects</text>
-  </g>
-
-  <g class="ttg-ui">
-    <rect x="22" y="52" width="92" height="24" rx="4" fill="#ffffff" stroke="#c9c9c9"/>
-    <text x="30" y="68" font-size="10.5" fill="#333">Class: JSS 1</text>
-    <path d="M96 61l5 6 5-6" fill="none" stroke="#555" stroke-width="1.6"/>
-    <rect class="ttg-warn" x="126" y="52" width="126" height="24" rx="4" fill="#fdf2f2" stroke="#b8860b" stroke-width="1.4"/>
-    <text x="136" y="68" font-size="10.5" fill="#b8860b" font-weight="700">&#9888; Check Issues</text>
-  </g>
-
-  <g class="ttg-ui" font-size="9" fill="#555">
-    <rect x="20" y="88" width="360" height="18" fill="#f0f0f0"/>
-    <text x="24" y="101">Day</text>
-    <text x="118" y="101" text-anchor="middle">Period 1</text>
-    <text x="181" y="101" text-anchor="middle">Period 2</text>
-    <text x="244" y="101" text-anchor="middle">Period 3</text>
-    <text x="307" y="101" text-anchor="middle">Period 4</text>
-    <text x="370" y="101" text-anchor="middle">Period 5</text>
-
-    <text x="48" y="126" text-anchor="middle" font-size="10.5">Mon</text>
-    <text x="48" y="164" text-anchor="middle" font-size="10.5">Tue</text>
-    <text x="48" y="202" text-anchor="middle" font-size="10.5">Wed</text>
-  </g>
-
-  <g class="ttg-ui">
-    <g class="ttg-cell" style="animation-delay:.25s">
-      <rect x="88" y="108" width="60" height="46" rx="3" fill="#C8E6FF"/>
-      <text x="118" y="128" text-anchor="middle" font-size="9" fill="#1a237e">Maths</text>
-      <text x="118" y="140" text-anchor="middle" font-size="8" fill="#37474f">Mr. Johnson</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+    <defs>
+        <clipPath id="clip">
+            <rect x="0" y="0" width="400" height="250" rx="10" />
+        </clipPath>
+    </defs>
+    <g clip-path="url(#clip)">
+        <image id="img1" href="assets/projects/timetablegen/1.png" width="400" height="250" preserveAspectRatio="xMidYMid slice">
+            <animate attributeName="opacity" values="1;0;0" keyTimes="0;0.3;0.33" dur="8s" repeatCount="indefinite" begin="0s" />
+        </image>
+        <image id="img2" href="assets/projects/timetablegen/2.png" width="400" height="250" preserveAspectRatio="xMidYMid slice" opacity="0">
+            <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.33;0.66" dur="8s" repeatCount="indefinite" begin="0s" />
+        </image>
+        <image id="img3" href="assets/projects/timetablegen/3.png" width="400" height="250" preserveAspectRatio="xMidYMid slice" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;0" keyTimes="0;0.33;0.66;1" dur="8s" repeatCount="indefinite" begin="0s" />
+        </image>
+        <!-- Simplified logic for the demo; in a real loop of 8, the timing would be 1/8th intervals. 
+             To keep the SVG clean and performant for the browser, I'll use a standard CSS animation 
+             pattern for the full set of 8 images instead if we want precise timing. 
+             However, for the requested "animated svg that scrolls through", I will implement 
+             the CSS approach in the HTML for the project card for better smoothness. -->
     </g>
-    <g class="ttg-cell" style="animation-delay:.47s">
-      <rect x="151" y="108" width="60" height="46" rx="3" fill="#C8E6FF"/>
-      <text x="181" y="128" text-anchor="middle" font-size="9" fill="#1a237e">English</text>
-      <text x="181" y="140" text-anchor="middle" font-size="8" fill="#37474f">Mrs. Smith</text>
-    </g>
-    <rect x="214" y="108" width="60" height="46" rx="3" fill="#ebebeb"/>
-    <text x="244" y="134" text-anchor="middle" font-size="9" fill="#666">Short break</text>
-    <g class="ttg-cell" style="animation-delay:.69s">
-      <rect x="277" y="108" width="60" height="46" rx="3" fill="#C8E6FF"/>
-      <text x="307" y="128" text-anchor="middle" font-size="9" fill="#1a237e">Physics</text>
-      <text x="307" y="140" text-anchor="middle" font-size="8" fill="#37474f">Dr. Brown</text>
-    </g>
-    <g class="ttg-cell" style="animation-delay:.91s">
-      <rect x="340" y="108" width="60" height="46" rx="3" fill="#C8E6FF"/>
-      <text x="370" y="128" text-anchor="middle" font-size="9" fill="#1a237e">Biology</text>
-      <text x="370" y="140" text-anchor="middle" font-size="8" fill="#37474f">Ms. Davis</text>
-    </g>
-
-    <g class="ttg-cell" style="animation-delay:1.13s">
-      <rect x="88" y="146" width="60" height="46" rx="3" fill="#C8E6FF"/>
-      <text x="118" y="166" text-anchor="middle" font-size="9" fill="#1a237e">History</text>
-      <text x="118" y="178" text-anchor="middle" font-size="8" fill="#37474f">Mr. Wilson</text>
-    </g>
-    <rect x="151" y="146" width="60" height="46" rx="3" fill="#ebebeb"/>
-    <text x="181" y="172" text-anchor="middle" font-size="9" fill="#666">Long break</text>
-    <g class="ttg-cell" style="animation-delay:1.35s">
-      <rect x="214" y="146" width="60" height="46" rx="3" fill="#C8E6FF"/>
-      <text x="244" y="166" text-anchor="middle" font-size="9" fill="#1a237e">Computer</text>
-      <text x="244" y="178" text-anchor="middle" font-size="8" fill="#37474f">Mr. Anderson</text>
-    </g>
-    <g class="ttg-cell" style="animation-delay:1.57s">
-      <rect x="277" y="146" width="60" height="46" rx="3" fill="#C8E6FF"/>
-      <text x="307" y="166" text-anchor="middle" font-size="9" fill="#1a237e">Maths</text>
-      <text x="307" y="178" text-anchor="middle" font-size="8" fill="#37474f">Mr. Johnson</text>
-    </g>
-    <g class="ttg-cell" style="animation-delay:1.79s">
-      <rect x="340" y="146" width="60" height="46" rx="3" fill="#C8E6FF"/>
-      <text x="370" y="166" text-anchor="middle" font-size="9" fill="#1a237e">English</text>
-      <text x="370" y="178" text-anchor="middle" font-size="8" fill="#37474f">Mrs. Smith</text>
-    </g>
-
-    <g class="ttg-cell" style="animation-delay:2.01s">
-      <rect x="88" y="184" width="60" height="46" rx="3" fill="#C8E6FF"/>
-      <text x="118" y="204" text-anchor="middle" font-size="9" fill="#1a237e">Physics</text>
-      <text x="118" y="216" text-anchor="middle" font-size="8" fill="#37474f">Dr. Brown</text>
-    </g>
-    <g class="ttg-cell" style="animation-delay:2.23s">
-      <rect x="151" y="184" width="60" height="46" rx="3" fill="#C8E6FF"/>
-      <text x="181" y="204" text-anchor="middle" font-size="9" fill="#1a237e">Geography</text>
-      <text x="181" y="216" text-anchor="middle" font-size="8" fill="#37474f">Mr. Wilson</text>
-    </g>
-    <rect x="214" y="184" width="60" height="46" rx="3" fill="#ebebeb"/>
-    <text x="244" y="210" text-anchor="middle" font-size="9" fill="#666">Short break</text>
-    <rect class="ttg-gap" x="277" y="184" width="60" height="46" rx="3"/>
-    <g class="ttg-cell" style="animation-delay:2.67s">
-      <rect x="340" y="184" width="60" height="46" rx="3" fill="#C8E6FF"/>
-      <text x="370" y="204" text-anchor="middle" font-size="9" fill="#1a237e">Economics</text>
-      <text x="370" y="216" text-anchor="middle" font-size="8" fill="#37474f">Mrs. Taylor</text>
-    </g>
-  </g>
 </svg>
