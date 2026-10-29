@@ -33,7 +33,8 @@ Portfolio1/
 ├── index.html        # Single-page site: About, Projects, Experience, Contact
 ├── style.css         # Plain CSS, one file
 ├── assets/
-│   └── photos/       # Photo placeholders, swapped for real photos when available
+│   ├── photos/       # Photo placeholders, swapped for real photos when available
+│   └── projects/     # Hand-written animated UI previews (SVG) for each project card
 ├── .gitignore
 └── README.md
 ```

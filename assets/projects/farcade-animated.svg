@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" role="img" aria-labelledby="ft ffd">
+  <title id="ft">Farcade preview</title>
+  <desc id="ffd">Animated mock of the Farcade mini-game: palette-coloured platforms scroll down continuously while a clay ball bounces above them on a dark panel.</desc>
+  <style>
+    .fg-scroll {
+      animation: fg-scroll 2.4s linear infinite;
+    }
+    @keyframes fg-scroll {
+      from { transform: translateY(-64px); }
+      to { transform: translateY(0); }
+    }
+    .fg-ball {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: fg-hop 2.4s cubic-bezier(.33,0,.35,1) infinite;
+    }
+    @keyframes fg-hop {
+      0% { transform: translateY(22px); }
+      8% { transform: translateY(24px) scale(1.12, .82); }
+      45% { transform: translateY(-14px) scale(.95, 1.07); }
+      92% { transform: translateY(24px) scale(1.12, .82); }
+      100% { transform: translateY(22px); }
+    }
+    .fg-score {
+      opacity: .4;
+      animation: fg-score 1.2s ease-in-out infinite;
+    }
+    @keyframes fg-score {
+      0%, 100% { opacity: .4; }
+      50% { opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fg-scroll, .fg-ball, .fg-score { animation: none; }
+      .fg-scroll { transform: none; }
+      .fg-ball { transform: translateY(-4px); }
+      .fg-score { opacity: .9; }
+    }
+  </style>
+
+  <rect width="400" height="250" rx="18" fill="#2B3138"/>
+
+  <g class="fg-score">
+    <path d="M356 40l3.5 11.5L370 55l-10.5 3.5L356 70l-3.5-11.5L342 55l10.5-3.5L356 40z" fill="#FFFFFF"/>
+  </g>
+
+  <g class="fg-scroll">
+    <rect x="96" y="-46" width="88" height="10" rx="5" fill="#258C91" opacity=".95"/>
+    <rect x="216" y="18" width="88" height="10" rx="5" fill="#6B61B8" opacity=".95"/>
+    <rect x="80" y="82" width="88" height="10" rx="5" fill="#3F79B5" opacity=".95"/>
+    <rect x="228" y="146" width="88" height="10" rx="5" fill="#D27851" opacity=".95"/>
+    <rect x="92" y="210" width="88" height="10" rx="5" fill="#258C91" opacity=".95"/>
+    <rect x="212" y="274" width="88" height="10" rx="5" fill="#6B61B8" opacity=".95"/>
+    <rect x="84" y="338" width="88" height="10" rx="5" fill="#3F79B5" opacity=".95"/>
+  </g>
+
+  <circle class="fg-ball" cx="140" cy="170" r="10" fill="#D27851"/>
+</svg>

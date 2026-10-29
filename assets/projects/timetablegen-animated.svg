@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" role="img" aria-labelledby="ttt ttd">
+  <title id="ttt">TimeTableGen preview</title>
+  <desc id="ttd">Animated mock of TimeTableGen: timetable cells light up in sequence as the generator runs, with one dashed slot left unassigned on a teal panel.</desc>
+  <style>
+    .tt-cell {
+      fill: #FFFFFF;
+      fill-opacity: 0;
+      animation: tt-cell 6s linear infinite;
+    }
+    @keyframes tt-cell {
+      0% { fill-opacity: 0; }
+      6% { fill-opacity: .85; }
+      78% { fill-opacity: .85; }
+      88%, 100% { fill-opacity: 0; }
+    }
+    .tt-gap {
+      fill: none;
+      stroke: #FFFFFF;
+      stroke-dasharray: 4 4;
+      stroke-width: 2;
+      opacity: .3;
+      animation: tt-gap 6s ease-in-out infinite;
+    }
+    @keyframes tt-gap {
+      0%, 100% { opacity: .3; }
+      50% { opacity: .9; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .tt-cell, .tt-gap { animation: none; }
+      .tt-cell { fill-opacity: .8; }
+      .tt-gap { opacity: .7; }
+    }
+  </style>
+
+  <rect width="400" height="250" rx="18" fill="#258C91"/>
+
+  <rect x="54" y="34" width="292" height="184" rx="12" fill="#FFFFFF" fill-opacity=".14" stroke="#FFFFFF" stroke-opacity=".7" stroke-width="2"/>
+  <circle cx="72" cy="50" r="3.5" fill="#FFFFFF" opacity=".9"/>
+  <circle cx="86" cy="50" r="3.5" fill="#FFFFFF" opacity=".55"/>
+  <circle cx="100" cy="50" r="3.5" fill="#FFFFFF" opacity=".3"/>
+
+  <g fill="#FFFFFF">
+    <rect x="100" y="58" width="42" height="6" rx="3" opacity=".45"/>
+    <rect x="146" y="58" width="42" height="6" rx="3" opacity=".45"/>
+    <rect x="192" y="58" width="42" height="6" rx="3" opacity=".45"/>
+    <rect x="238" y="58" width="42" height="6" rx="3" opacity=".45"/>
+    <rect x="284" y="58" width="42" height="6" rx="3" opacity=".45"/>
+    <rect x="68" y="74" width="20" height="5" rx="2.5" opacity=".55"/>
+    <rect x="68" y="110" width="20" height="5" rx="2.5" opacity=".55"/>
+    <rect x="68" y="146" width="20" height="5" rx="2.5" opacity=".55"/>
+    <rect x="68" y="182" width="20" height="5" rx="2.5" opacity=".55"/>
+  </g>
+
+  <rect class="tt-cell" x="100" y="70" width="42" height="30" rx="5" style="animation-delay:0s"/>
+  <rect class="tt-cell" x="146" y="70" width="42" height="30" rx="5" style="animation-delay:.24s"/>
+  <rect class="tt-cell" x="192" y="70" width="42" height="30" rx="5" style="animation-delay:.48s"/>
+  <rect class="tt-cell" x="238" y="70" width="42" height="30" rx="5" style="animation-delay:.72s"/>
+  <rect class="tt-cell" x="284" y="70" width="42" height="30" rx="5" style="animation-delay:.96s"/>
+
+  <rect class="tt-cell" x="100" y="106" width="42" height="30" rx="5" style="animation-delay:1.2s"/>
+  <rect class="tt-cell" x="146" y="106" width="42" height="30" rx="5" style="animation-delay:1.44s"/>
+  <rect class="tt-cell" x="192" y="106" width="42" height="30" rx="5" style="animation-delay:1.68s"/>
+  <rect class="tt-gap" x="238" y="106" width="42" height="30" rx="5"/>
+  <rect class="tt-cell" x="284" y="106" width="42" height="30" rx="5" style="animation-delay:2.16s"/>
+
+  <rect class="tt-cell" x="100" y="142" width="42" height="30" rx="5" style="animation-delay:2.4s"/>
+  <rect class="tt-cell" x="146" y="142" width="42" height="30" rx="5" style="animation-delay:2.64s"/>
+  <rect class="tt-cell" x="192" y="142" width="42" height="30" rx="5" style="animation-delay:2.88s"/>
+  <rect class="tt-cell" x="238" y="142" width="42" height="30" rx="5" style="animation-delay:3.12s"/>
+  <rect class="tt-cell" x="284" y="142" width="42" height="30" rx="5" style="animation-delay:3.36s"/>
+
+  <rect class="tt-cell" x="100" y="178" width="42" height="30" rx="5" style="animation-delay:3.6s"/>
+  <rect class="tt-cell" x="146" y="178" width="42" height="30" rx="5" style="animation-delay:3.84s"/>
+  <rect class="tt-cell" x="192" y="178" width="42" height="30" rx="5" style="animation-delay:4.08s"/>
+  <rect class="tt-cell" x="238" y="178" width="42" height="30" rx="5" style="animation-delay:4.32s"/>
+  <rect class="tt-cell" x="284" y="178" width="42" height="30" rx="5" style="animation-delay:4.56s"/>
+</svg>
