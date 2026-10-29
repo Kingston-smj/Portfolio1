@@ -40,15 +40,27 @@
                 <article class="project-card">
                     <button class="project-trigger" data-project="Taskdock" data-animation="assets/projects/taskdock-animated.svg" aria-haspopup="dialog">
                         <img class="project-anim" src="assets/projects/taskdock-animated.svg" alt="" width="400" height="250">
-                        <span class="project-desc">Single-host build and test job runner in Go. SQLite-backed queue with retries, bounded attempt logs, crash recovery, and Prometheus metrics — the same failure and scheduling problems as larger CI systems, kept deliberately small.</span>
+                        <span class="project-desc">Single-host build and test job runner in Go. SQLite-backed queue with retries,
+                                    bounded attempt logs, crash recovery, and Prometheus metrics — the same failure and scheduling problems 
+                                    as larger CI systems, kept deliberately small.</span>
                     </button>
                     <h3>Taskdock</h3>
                     <p class="stack">Go &middot; SQLite &middot; Linux</p>
                 </article>
                 <article class="project-card">
                     <button class="project-trigger" data-project="TimeTableGen" data-animation="assets/projects/timetablegen-animated.svg" aria-haspopup="dialog">
-                        <img class="project-anim" src="assets/projects/timetablegen-animated.svg" alt="" width="400" height="250">
-                        <span class="project-desc">PyQt6 desktop app that generates full weekly timetables for ~27 secondary-school classes with a multi-pass constraint-satisfaction heuristic, then assigns teachers and surfaces staffing gaps visually.</span>
+                        <div class="project-anim-container">
+                            <img src="assets/projects/timetablegen/1.png" class="project-anim-slide">
+                            <img src="assets/projects/timetablegen/2.png" class="project-anim-slide">
+                            <img src="assets/projects/timetablegen/3.png" class="project-anim-slide">
+                            <img src="assets/projects/timetablegen/4.png" class="project-anim-slide">
+                            <img src="assets/projects/timetablegen/5.png" class="project-anim-slide">
+                            <img src="assets/projects/timetablegen/6.png" class="project-anim-slide">
+                            <img src="assets/projects/timetablegen/7.png" class="project-anim-slide">
+                            <img src="assets/projects/timetablegen/8.png" class="project-anim-slide">
+                        </div>
+                        <span class="project-desc">PyQt6 desktop app that generates full weekly timetables for ~27 secondary-school classes 
+                            with a multi-pass constraint-satisfaction heuristic, then assigns teachers and surfaces staffing gaps visually.</span>
                     </button>
                     <h3>TimeTableGen</h3>
                     <p class="stack">Python &middot; PyQt6 &middot; Algorithms</p>
@@ -56,7 +68,8 @@
                 <article class="project-card">
                     <button class="project-trigger" data-project="ClipIt" data-animation="assets/projects/clipit-animated.svg" aria-haspopup="dialog">
                         <img class="project-anim" src="assets/projects/clipit-animated.svg" alt="" width="400" height="250">
-                        <span class="project-desc">Lightweight Linux clipboard manager in Qt/C++ bringing a Win+V-style history to Wayland, with bounded memory usage, pinned and editable entries, duplicate prevention, and emoji/kaomoji/symbol pickers in a tabbed popup. Packaged for Ubuntu testers.</span>
+                        <span class="project-desc">Lightweight Linux clipboard manager in Qt/C++ bringing a Win+V-style history to Wayland, with bounded memory usage, 
+                            pinned and editable entries, duplicate prevention, and emoji/kaomoji/symbol pickers in a tabbed popup. Packaged for Ubuntu testers.</span>
                     </button>
                     <h3>ClipIt</h3>
                     <p class="stack">C++ &middot; Qt6 &middot; Linux</p>
@@ -72,7 +85,8 @@
                 <article class="project-card">
                     <button class="project-trigger" data-project="Farcade" data-animation="assets/projects/farcade-animated.svg" aria-haspopup="dialog">
                         <img class="project-anim" src="assets/projects/farcade-animated.svg" alt="" width="400" height="250">
-                        <span class="project-desc">Farcaster mini-game work: a planet-hopping arcade game with a doodle-jump-style contest, plus an original browser version, built in Phaser and plain CSS/DOM after resolving rotation and frame-integration issues.</span>
+                        <span class="project-desc">Farcaster mini-game work: a planet-hopping arcade game with a doodle-jump-style contest, 
+                            plus an original browser version, built in Phaser and plain CSS/DOM after resolving rotation and frame-integration issues.</span>
                     </button>
                     <h3>Farcade</h3>
                     <p class="stack">JavaScript &middot; Phaser &middot; CSS</p>
@@ -82,17 +96,27 @@
 
         <section id="experience">
             <h2>Experience</h2>
+            <article class="entry">
+                <h3>IT Department Intern &mdash; TotalEnergies Marketing Nigeria</h3>
+                <p class="entry-meta">Lagos, Nigeria &middot; June &ndash; December 2025</p>
+                <ul>
+                    <li>Built an internal employee feedback application using Power Apps Canvas and Power Fx, with submission, history, and admin views.</li>
+                    <li>Added status tracking so administrators could mark feedback as pending, noted, in progress, or completed.</li>
+                </ul>
+            </article>
         </section>
 
         <section id="contact">
             <h2>Contact</h2>
-            <p>GitHub: <a href="https://github.com/Kingston-smj/">Kingston-smj</a></p>
+            <ul class="contact-list">
+                <li>Email: <a href="mailto:adesolaog@gmail.com">adesolaog@gmail.com</a></li>
+                <li>Phone: <a href="tel:+2348080069243">+234 808 006 9243</a></li>
+                <li>GitHub: <a href="https://github.com/Kingston-smj/">Kingston-smj</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/oluwaseyifunmi-adesola-247a652a7/">Oluwaseyifunmi Adesola</a></li>
+                <li>Lagos, Nigeria</li>
+            </ul>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2026 Oluwaseyifunmi Adesola Gabriel</p>
-    </footer>
 
     <dialog id="project-dialog" class="project-dialog" aria-labelledby="dialog-title">
         <header>
