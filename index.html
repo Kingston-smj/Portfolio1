@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oluwaseyifunmi Adesola Gabriel | Software Engineer</title>
-    <meta name="description" content="Portfolio of Oluwaseyifunmi Adesola Gabriel, Software Engineer — systems, backend, and tooling projects.">
+    <meta name="description"
+        content="Portfolio of Oluwaseyifunmi Adesola Gabriel, Software Engineer — systems, backend, and tooling projects.">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class="site-header">
         <nav aria-label="Main navigation">
-            <a class="brand" href="#top">OAG</a>
-            <ul>
+            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -24,13 +31,16 @@
         <section id="about">
             <h2>About</h2>
             <h1>Oluwaseyifunmi Adesola Gabriel</h1>
-            <p class="tagline">Software Engineer specializing in system reliability, algorithmic optimization, and financial infrastructure.</p>
+            <p class="tagline">Software Engineer specializing in system reliability, algorithmic optimization, and
+                financial infrastructure.</p>
             <ul class="photo-strip">
-                <li><img src="assets/photos/photo-1.svg" alt="Placeholder for a photo of Oluwaseyifunmi with friends" width="400" height="300"></li>
-                <li><img src="assets/photos/photo-2.svg" alt="Placeholder for a photo of Oluwaseyifunmi with friends" width="400" height="300"></li>
-                <li><img src="assets/photos/photo-3.svg" alt="Placeholder for a photo of Oluwaseyifunmi with friends" width="400" height="300"></li>
-                <li><img src="assets/photos/photo-4.svg" alt="Placeholder for a photo of Oluwaseyifunmi with friends" width="400" height="300"></li>
-                <li><img src="assets/photos/photo-5.svg" alt="Placeholder for a photo of Oluwaseyifunmi with friends" width="400" height="300"></li>
+                <li><img src="assets/photos/1.png" alt="Working on Switches" width="400" height="300"></li>
+                <li><img src="assets/photos/2.jpg" alt="Preparing for a routine check for internet services at a depot"
+                        width="400" height="300"></li>
+                <li><img src="assets/photos/4.jpg" alt="Weekly presentation at internship" width="400" height="300">
+                </li>
+                <li><img src="assets/photos/3.jpg" alt="Personal Photo" width="400" height="300"></li>
+                <li><img src="assets/photos/5.png" alt="Personal Photo" width="400" height="300"></li>
             </ul>
         </section>
 
@@ -38,17 +48,23 @@
             <h2>Projects</h2>
             <div class="projects-grid">
                 <article class="project-card">
-                    <button class="project-trigger" data-project="Taskdock" data-animation="assets/projects/taskdock-animated.svg" aria-haspopup="dialog">
-                        <img class="project-anim" src="assets/projects/taskdock-animated.svg" alt="" width="400" height="250">
-                        <span class="project-desc">Single-host build and test job runner in Go. SQLite-backed queue with retries,
-                                    bounded attempt logs, crash recovery, and Prometheus metrics — the same failure and scheduling problems 
-                                    as larger CI systems, kept deliberately small.</span>
+                    <button class="project-trigger" data-project="Taskdock"
+                        data-animation="assets/projects/taskdock-animated.svg" aria-haspopup="dialog">
+                        <img class="project-anim" src="assets/projects/taskdock-animated.svg" alt="" width="400"
+                            height="250">
+                        <span class="project-desc">Single-host build and test job runner in Go. SQLite-backed queue with
+                            retries,
+                            bounded attempt logs, crash recovery, and Prometheus metrics — the same failure and
+                            scheduling problems
+                            as larger CI systems, kept deliberately small.</span>
                     </button>
-                    <h3>Taskdock</h3>
+                    <h3><a href="https://github.com/Kingston-smj/Taskdock" target="_blank"
+                            rel="noopener noreferrer">Taskdock</a></h3>
                     <p class="stack">Go &middot; SQLite &middot; Linux</p>
                 </article>
                 <article class="project-card">
-                    <button class="project-trigger" data-project="TimeTableGen" data-animation="assets/projects/timetablegen-animated.svg" aria-haspopup="dialog">
+                    <button class="project-trigger" data-project="TimeTableGen"
+                        data-animation="assets/projects/timetablegen-animated.svg" aria-haspopup="dialog">
                         <div class="project-anim-container">
                             <img src="assets/projects/timetablegen/1.png" class="project-anim-slide">
                             <img src="assets/projects/timetablegen/2.png" class="project-anim-slide">
@@ -59,36 +75,54 @@
                             <img src="assets/projects/timetablegen/7.png" class="project-anim-slide">
                             <img src="assets/projects/timetablegen/8.png" class="project-anim-slide">
                         </div>
-                        <span class="project-desc">PyQt6 desktop app that generates full weekly timetables for ~27 secondary-school classes 
-                            with a multi-pass constraint-satisfaction heuristic, then assigns teachers and surfaces staffing gaps visually.</span>
+                        <span class="project-desc">PyQt6 desktop app that generates full weekly timetables for ~27
+                            secondary-school classes
+                            with a multi-pass constraint-satisfaction heuristic, then assigns teachers and surfaces
+                            staffing gaps visually.</span>
                     </button>
-                    <h3>TimeTableGen</h3>
+                    <h3><a href="https://github.com/Kingston-smj/TimeTableGen" target="_blank"
+                            rel="noopener noreferrer">TimeTableGen</a></h3>
                     <p class="stack">Python &middot; PyQt6 &middot; Algorithms</p>
                 </article>
                 <article class="project-card">
-                    <button class="project-trigger" data-project="ClipIt" data-animation="assets/projects/clipit-animated.svg" aria-haspopup="dialog">
-                        <img class="project-anim" src="assets/projects/clipit-animated.svg" alt="" width="400" height="250">
-                        <span class="project-desc">Lightweight Linux clipboard manager in Qt/C++ bringing a Win+V-style history to Wayland, with bounded memory usage, 
-                            pinned and editable entries, duplicate prevention, and emoji/kaomoji/symbol pickers in a tabbed popup. Packaged for Ubuntu testers.</span>
+                    <button class="project-trigger" data-project="ClipIt"
+                        data-animation="assets/projects/clipit-animated.svg" aria-haspopup="dialog">
+                        <img class="project-anim" src="assets/projects/clipit-animated.svg" alt="" width="400"
+                            height="250">
+                        <span class="project-desc">Lightweight Linux clipboard manager in Qt/C++ bringing a Win+V-style
+                            history to Wayland, with bounded memory usage,
+                            pinned and editable entries, duplicate prevention, and emoji/kaomoji/symbol pickers in a
+                            tabbed popup. Packaged for Ubuntu testers.</span>
                     </button>
-                    <h3>ClipIt</h3>
+                    <h3><a href="https://github.com/Kingston-smj/ClipIt" target="_blank"
+                            rel="noopener noreferrer">ClipIt</a></h3>
                     <p class="stack">C++ &middot; Qt6 &middot; Linux</p>
                 </article>
                 <article class="project-card">
-                    <button class="project-trigger" data-project="See-My-Speech" data-animation="assets/projects/see-my-speech-animated.svg" aria-haspopup="dialog">
-                        <img class="project-anim" src="assets/projects/see-my-speech-animated.svg" alt="" width="400" height="250">
-                        <span class="project-desc">Desktop audio transcription with OpenAI Whisper behind a PyQt interface for Linux and Windows. Core functionality, UI components, and worker threads keep the interface responsive through long transcription jobs.</span>
+                    <button class="project-trigger" data-project="See-My-Speech"
+                        data-animation="assets/projects/see-my-speech-animated.svg" aria-haspopup="dialog">
+                        <img class="project-anim" src="assets/projects/see-my-speech-animated.svg" alt="" width="400"
+                            height="250">
+                        <span class="project-desc">Desktop audio transcription with OpenAI Whisper behind a PyQt
+                            interface for Linux and Windows. Core functionality, UI components, and worker threads keep
+                            the interface responsive through long transcription jobs.</span>
                     </button>
-                    <h3>See-My-Speech</h3>
+                    <h3><a href="https://github.com/Kingston-smj/See-My-Speech" target="_blank"
+                            rel="noopener noreferrer">See-My-Speech</a></h3>
                     <p class="stack">Python &middot; PyQt &middot; Whisper</p>
                 </article>
                 <article class="project-card">
-                    <button class="project-trigger" data-project="Farcade" data-animation="assets/projects/farcade-animated.svg" aria-haspopup="dialog">
-                        <img class="project-anim" src="assets/projects/farcade-animated.svg" alt="" width="400" height="250">
-                        <span class="project-desc">Farcaster mini-game work: a planet-hopping arcade game with a doodle-jump-style contest, 
-                            plus an original browser version, built in Phaser and plain CSS/DOM after resolving rotation and frame-integration issues.</span>
+                    <button class="project-trigger" data-project="Farcade"
+                        data-animation="assets/projects/farcade-animated.svg" aria-haspopup="dialog">
+                        <img class="project-anim" src="assets/projects/farcade-animated.svg" alt="" width="400"
+                            height="250">
+                        <span class="project-desc">Farcaster mini-game work: a planet-hopping arcade game with a
+                            doodle-jump-style contest,
+                            plus an original browser version, built in Phaser and plain CSS/DOM after resolving rotation
+                            and frame-integration issues.</span>
                     </button>
-                    <h3>Farcade</h3>
+                    <h3><a href="https://github.com/Kingston-smj/Farcade" target="_blank"
+                            rel="noopener noreferrer">Farcade</a></h3>
                     <p class="stack">JavaScript &middot; Phaser &middot; CSS</p>
                 </article>
             </div>
@@ -100,8 +134,10 @@
                 <h3>IT Department Intern &mdash; TotalEnergies Marketing Nigeria</h3>
                 <p class="entry-meta">Lagos, Nigeria &middot; June &ndash; December 2025</p>
                 <ul>
-                    <li>Built an internal employee feedback application using Power Apps Canvas and Power Fx, with submission, history, and admin views.</li>
-                    <li>Added status tracking so administrators could mark feedback as pending, noted, in progress, or completed.</li>
+                    <li>Built an internal employee feedback application using Power Apps Canvas and Power Fx, with
+                        submission, history, and admin views.</li>
+                    <li>Added status tracking so administrators could mark feedback as pending, noted, in progress, or
+                        completed.</li>
                 </ul>
             </article>
         </section>
@@ -112,7 +148,8 @@
                 <li>Email: <a href="mailto:adesolaog@gmail.com">adesolaog@gmail.com</a></li>
                 <li>Phone: <a href="tel:+2348080069243">+234 808 006 9243</a></li>
                 <li>GitHub: <a href="https://github.com/Kingston-smj/">Kingston-smj</a></li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/oluwaseyifunmi-adesola-247a652a7/">Oluwaseyifunmi Adesola</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/oluwaseyifunmi-adesola-247a652a7/">Oluwaseyifunmi
+                        Adesola</a></li>
                 <li>Lagos, Nigeria</li>
             </ul>
         </section>
@@ -126,6 +163,15 @@
         <img class="dialog-media" alt="">
     </dialog>
 
+    <dialog id="photo-dialog" class="project-dialog">
+        <header>
+            <span></span>
+            <button class="dialog-close" aria-label="Close photo">&times;</button>
+        </header>
+        <img class="dialog-media" alt="">
+    </dialog>
+
     <script src="script.js"></script>
 </body>
+
 </html>
