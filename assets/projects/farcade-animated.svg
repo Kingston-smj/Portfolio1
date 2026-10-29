@@ -1,57 +1,108 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" role="img" aria-labelledby="ft ffd">
   <title id="ft">Farcade preview</title>
-  <desc id="ffd">Animated mock of the Farcade mini-game: palette-coloured platforms scroll down continuously while a clay ball bounces above them on a dark panel.</desc>
+  <desc id="ffd">Looping re-creation of the real Planet Hopper game: an astronaut launches between planets along the yellow trajectory while the HUD and controls match the game.</desc>
+  <defs>
+    <linearGradient id="fh-bg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="400" y2="250">
+      <stop offset="0" stop-color="#0a0a23"/>
+      <stop offset="1" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
   <style>
-    .fg-scroll {
-      animation: fg-scroll 2.4s linear infinite;
+    .fh-ui { font-family: system-ui, sans-serif; font-weight: 600; }
+    .fh-traj {
+      fill: none;
+      stroke: #ffff00;
+      stroke-width: 1.4;
+      stroke-dasharray: 5 6;
+      opacity: 0;
+      animation: fh-traj 7s ease-in-out infinite;
     }
-    @keyframes fg-scroll {
-      from { transform: translateY(-64px); }
-      to { transform: translateY(0); }
+    @keyframes fh-traj {
+      0%, 14% { opacity: 0; }
+      17%, 45% { opacity: .85; }
+      50% { opacity: 0; }
+      68%, 80% { opacity: .85; }
+      84%, 100% { opacity: 0; }
     }
-    .fg-ball {
-      transform-box: fill-box;
-      transform-origin: 50% 100%;
-      animation: fg-hop 2.4s cubic-bezier(.33,0,.35,1) infinite;
+    .fh-score-b {
+      opacity: 0;
+      animation: fh-score 7s ease-in-out infinite;
     }
-    @keyframes fg-hop {
-      0% { transform: translateY(22px); }
-      8% { transform: translateY(24px) scale(1.12, .82); }
-      45% { transform: translateY(-14px) scale(.95, 1.07); }
-      92% { transform: translateY(24px) scale(1.12, .82); }
-      100% { transform: translateY(22px); }
+    @keyframes fh-score {
+      0%, 24% { opacity: 0; }
+      30%, 62% { opacity: 1; }
+      100% { opacity: 0; }
     }
-    .fg-score {
-      opacity: .4;
-      animation: fg-score 1.2s ease-in-out infinite;
+    .fh-score-a {
+      animation: fh-score-a 7s ease-in-out infinite;
     }
-    @keyframes fg-score {
-      0%, 100% { opacity: .4; }
-      50% { opacity: 1; }
+    @keyframes fh-score-a {
+      0%, 24% { opacity: 1; }
+      30% { opacity: 0; }
+      94% { opacity: 0; }
+      100% { opacity: 1; }
     }
     @media (prefers-reduced-motion: reduce) {
-      .fg-scroll, .fg-ball, .fg-score { animation: none; }
-      .fg-scroll { transform: none; }
-      .fg-ball { transform: translateY(-4px); }
-      .fg-score { opacity: .9; }
+      .fh-traj { animation: none; opacity: .5; }
+      .fh-score-a, .fh-score-b { animation: none; opacity: 1; }
+      .fh-astro { animation: none; }
     }
   </style>
 
-  <rect width="400" height="250" rx="18" fill="#2B3138"/>
-
-  <g class="fg-score">
-    <path d="M356 40l3.5 11.5L370 55l-10.5 3.5L356 70l-3.5-11.5L342 55l10.5-3.5L356 40z" fill="#FFFFFF"/>
+  <rect width="400" height="250" rx="16" fill="url(#fh-bg)"/>
+  <g fill="#ffffff">
+    <circle cx="50" cy="38" r="1" opacity=".5"/>
+    <circle cx="120" cy="60" r=".8" opacity=".4"/>
+    <circle cx="205" cy="34" r="1" opacity=".6"/>
+    <circle cx="330" cy="46" r="1.2" opacity=".7"/>
+    <circle cx="365" cy="90" r=".8" opacity=".4"/>
+    <circle cx="300" cy="120" r="1" opacity=".5"/>
+    <circle cx="66" cy="150" r="1" opacity=".45"/>
+    <circle cx="255" cy="200" r="1" opacity=".5"/>
+    <circle cx="350" cy="205" r=".9" opacity=".4"/>
+    <circle cx="35" cy="215" r="1.2" opacity=".55"/>
+    <circle cx="145" cy="235" r=".8" opacity=".35"/>
+    <circle cx="95" cy="95" r=".7" opacity=".3"/>
   </g>
 
-  <g class="fg-scroll">
-    <rect x="96" y="-46" width="88" height="10" rx="5" fill="#258C91" opacity=".95"/>
-    <rect x="216" y="18" width="88" height="10" rx="5" fill="#6B61B8" opacity=".95"/>
-    <rect x="80" y="82" width="88" height="10" rx="5" fill="#3F79B5" opacity=".95"/>
-    <rect x="228" y="146" width="88" height="10" rx="5" fill="#D27851" opacity=".95"/>
-    <rect x="92" y="210" width="88" height="10" rx="5" fill="#258C91" opacity=".95"/>
-    <rect x="212" y="274" width="88" height="10" rx="5" fill="#6B61B8" opacity=".95"/>
-    <rect x="84" y="338" width="88" height="10" rx="5" fill="#3F79B5" opacity=".95"/>
+  <rect x="9" y="9" width="382" height="232" rx="9" fill="none" stroke="#4a9eff" stroke-width="2"/>
+
+  <g class="fh-ui" font-size="11">
+    <g class="fh-score-a"><text x="22" y="33" fill="#ffffff">Score: 100</text></g>
+    <g class="fh-score-b"><text x="22" y="33" fill="#ffffff">Score: 200</text></g>
+    <text x="22" y="49" fill="#ffffff">Galaxy: 1/10</text>
+    <text x="22" y="65" fill="#ffffff">Zoom: 0.5x</text>
+  </g>
+  <text class="fh-ui" x="22" y="231" font-size="8.5" font-weight="400" fill="#c9d4e8" opacity=".85">Mouse Wheel: Zoom | Click: Launch | Space: Reset Zoom</text>
+
+  <g>
+    <circle cx="140" cy="196" r="13" fill="#8b5a3c"/>
+    <circle cx="140" cy="196" r="9.1" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <circle cx="176" cy="150" r="17" fill="#8b5a3c"/>
+    <circle cx="176" cy="150" r="11.9" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <circle cx="228" cy="104" r="17" fill="#77a56b"/>
+    <circle cx="228" cy="104" r="11.9" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <circle cx="280" cy="58" r="10" fill="#8b5a3c"/>
+    <circle cx="280" cy="58" r="7" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
   </g>
 
-  <circle class="fg-ball" cx="140" cy="170" r="10" fill="#D27851"/>
+  <path class="fh-traj" d="M140 178 C 150 138, 168 128, 175 133 M 176 133 C 190 122, 206 132, 227 92"/>
+
+  <g class="fh-astro">
+    <animateMotion dur="7s" repeatCount="indefinite" calcMode="linear"
+      keyPoints="0;0;1;1;0;0" keyTimes="0;0.16;0.46;0.64;0.86;1"
+      path="M140 178 C 150 138, 168 128, 175.5 132.6 M 175.5 132.6 C 192 128, 214 108, 227 89"/>
+    <g stroke="#e8eaee" stroke-width="1.8" stroke-linecap="round" fill="none">
+      <circle cx="0" cy="-14" r="4.6" fill="#f2f3f5"/>
+      <circle cx="1.6" cy="-14" r="2" fill="#9aa4b5" stroke="none"/>
+      <rect x="-3.4" y="-9.6" width="6.8" height="9" rx="2.6" fill="#f2f3f5"/>
+      <path d="M-3.4 -7.4 L-7 -4"/>
+      <path d="M3.4 -7.4 L7 -4"/>
+      <path d="M-1.6 -0.6 L-3 3"/>
+      <path d="M1.6 -0.6 L3 3"/>
+    </g>
+  </g>
+
+  <circle cx="200" cy="222" r="14" fill="#e01b1b" stroke="#000000" stroke-width="2"/>
+  <text class="fh-ui" x="200" y="225" font-size="8" text-anchor="middle" fill="#000000">Launch</text>
 </svg>

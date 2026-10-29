@@ -158,7 +158,97 @@ h2::after {
     height: auto;
     border-radius: 8px;
     border: 1px solid var(--line);
+}
+
+.project-trigger {
+    position: relative;
+    display: block;
+    width: 100%;
     margin: 0 0 0.45rem;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+    border-radius: 8px;
+}
+
+.project-desc {
+    position: absolute;
+    inset: 0;
+    background: rgba(27, 32, 39, 0.88);
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 1rem 1.1rem;
+    font-size: 0.93rem;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-end;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.project-trigger:hover .project-desc,
+.project-trigger:focus-visible .project-desc {
+    opacity: 1;
+}
+
+@media (hover: none) {
+    .project-desc {
+        position: static;
+        opacity: 1;
+        background: none;
+        color: var(--ink);
+        padding: 0.45rem 0 0;
+        display: block;
+    }
+}
+
+.project-dialog {
+    width: min(720px, 94vw);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 0.5rem 0.6rem 0.8rem;
+}
+
+.project-dialog::backdrop {
+    background: rgba(15, 18, 24, 0.62);
+}
+
+.project-dialog header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.4rem 0.4rem 0.5rem;
+}
+
+.dialog-title {
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+.dialog-close {
+    border: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--ink);
+    border-radius: 8px;
+    padding: 0.1rem 0.6rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.dialog-close:hover {
+    border-color: #c9d0d6;
+}
+
+.dialog-media {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 
 .project-card:hover {

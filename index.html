@@ -38,33 +38,43 @@
             <h2>Projects</h2>
             <div class="projects-grid">
                 <article class="project-card">
-                    <img class="project-anim" src="assets/projects/taskdock-animated.svg" alt="Animated mock of the Taskdock job queue filling and completing" width="400" height="250">
+                    <button class="project-trigger" data-project="Taskdock" data-animation="assets/projects/taskdock-animated.svg" aria-haspopup="dialog">
+                        <img class="project-anim" src="assets/projects/taskdock-animated.svg" alt="" width="400" height="250">
+                        <span class="project-desc">Single-host build and test job runner in Go. SQLite-backed queue with retries, bounded attempt logs, crash recovery, and Prometheus metrics — the same failure and scheduling problems as larger CI systems, kept deliberately small.</span>
+                    </button>
                     <h3>Taskdock</h3>
-                    <p>Single-host build and test job runner in Go. SQLite-backed queue with retries, bounded attempt logs, crash recovery, and Prometheus metrics — the same failure and scheduling problems as larger CI systems, kept deliberately small.</p>
                     <p class="stack">Go &middot; SQLite &middot; Linux</p>
                 </article>
                 <article class="project-card">
-                    <img class="project-anim" src="assets/projects/timetablegen-animated.svg" alt="Animated mock of TimeTableGen filling a timetable grid with one unassigned slot" width="400" height="250">
+                    <button class="project-trigger" data-project="TimeTableGen" data-animation="assets/projects/timetablegen-animated.svg" aria-haspopup="dialog">
+                        <img class="project-anim" src="assets/projects/timetablegen-animated.svg" alt="" width="400" height="250">
+                        <span class="project-desc">PyQt6 desktop app that generates full weekly timetables for ~27 secondary-school classes with a multi-pass constraint-satisfaction heuristic, then assigns teachers and surfaces staffing gaps visually.</span>
+                    </button>
                     <h3>TimeTableGen</h3>
-                    <p>PyQt6 desktop app that generates full weekly timetables for ~27 secondary-school classes with a multi-pass constraint-satisfaction heuristic, then assigns teachers and surfaces staffing gaps visually.</p>
                     <p class="stack">Python &middot; PyQt6 &middot; Algorithms</p>
                 </article>
                 <article class="project-card">
-                    <img class="project-anim" src="assets/projects/clipit-animated.svg" alt="Animated mock of ClipIt's clipboard history popup cycling its highlight" width="400" height="250">
+                    <button class="project-trigger" data-project="ClipIt" data-animation="assets/projects/clipit-animated.svg" aria-haspopup="dialog">
+                        <img class="project-anim" src="assets/projects/clipit-animated.svg" alt="" width="400" height="250">
+                        <span class="project-desc">Lightweight Linux clipboard manager in Qt/C++ bringing a Win+V-style history to Wayland, with bounded memory usage, pinned and editable entries, duplicate prevention, and emoji/kaomoji/symbol pickers in a tabbed popup. Packaged for Ubuntu testers.</span>
+                    </button>
                     <h3>ClipIt</h3>
-                    <p>Lightweight Linux clipboard manager in Qt/C++ bringing a Win+V-style history to Wayland, with bounded memory usage, pinned and editable entries, duplicate prevention, and emoji/kaomoji/symbol pickers in a tabbed popup. Packaged for Ubuntu testers.</p>
                     <p class="stack">C++ &middot; Qt6 &middot; Linux</p>
                 </article>
                 <article class="project-card">
-                    <img class="project-anim" src="assets/projects/see-my-speech-animated.svg" alt="Animated mock of See-My-Speech showing a waveform and transcript lines appearing" width="400" height="250">
+                    <button class="project-trigger" data-project="See-My-Speech" data-animation="assets/projects/see-my-speech-animated.svg" aria-haspopup="dialog">
+                        <img class="project-anim" src="assets/projects/see-my-speech-animated.svg" alt="" width="400" height="250">
+                        <span class="project-desc">Desktop audio transcription with OpenAI Whisper behind a PyQt interface for Linux and Windows. Core functionality, UI components, and worker threads keep the interface responsive through long transcription jobs.</span>
+                    </button>
                     <h3>See-My-Speech</h3>
-                    <p>Desktop audio transcription with OpenAI Whisper behind a PyQt interface for Linux and Windows. Core functionality, UI components, and worker threads keep the interface responsive through long transcription jobs.</p>
                     <p class="stack">Python &middot; PyQt &middot; Whisper</p>
                 </article>
                 <article class="project-card">
-                    <img class="project-anim" src="assets/projects/farcade-animated.svg" alt="Animated mock of the Farcade mini-game with a bouncing ball and scrolling platforms" width="400" height="250">
+                    <button class="project-trigger" data-project="Farcade" data-animation="assets/projects/farcade-animated.svg" aria-haspopup="dialog">
+                        <img class="project-anim" src="assets/projects/farcade-animated.svg" alt="" width="400" height="250">
+                        <span class="project-desc">Farcaster mini-game work: a planet-hopping arcade game with a doodle-jump-style contest, plus an original browser version, built in Phaser and plain CSS/DOM after resolving rotation and frame-integration issues.</span>
+                    </button>
                     <h3>Farcade</h3>
-                    <p>Farcaster mini-game work: finished a doodle-jump-style contest game in Phaser, plus an original CSS/DOM version that runs entirely without canvas, after resolving rotation and frame-integration issues.</p>
                     <p class="stack">JavaScript &middot; Phaser &middot; CSS</p>
                 </article>
             </div>
@@ -83,5 +93,15 @@
     <footer>
         <p>&copy; 2026 Oluwaseyifunmi Adesola Gabriel</p>
     </footer>
+
+    <dialog id="project-dialog" class="project-dialog" aria-labelledby="dialog-title">
+        <header>
+            <h3 class="dialog-title"></h3>
+            <button class="dialog-close" aria-label="Close preview">&times;</button>
+        </header>
+        <img class="dialog-media" alt="">
+    </dialog>
+
+    <script src="script.js"></script>
 </body>
 </html>

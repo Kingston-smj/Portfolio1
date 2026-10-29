@@ -1,70 +1,77 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" role="img" aria-labelledby="tgt tgd">
-  <title id="tgt">Taskdock preview</title>
-  <desc id="tgd">Animated mock of the Taskdock job runner: jobs fill their progress bars and check off one after another on an indigo panel.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" role="img" aria-labelledby="tdt tdd">
+  <title id="tdt">Taskdock preview</title>
+  <desc id="tdd">Looping re-creation of a Taskdock terminal session: a smoke job is submitted with --wait, then the Prometheus metrics endpoint is read.</desc>
   <style>
-    .td-bar {
-      opacity: .92;
-      transform-box: fill-box;
-      transform-origin: 0% 50%;
-      animation: td-bar 6s ease-in-out infinite;
-    }
-    @keyframes td-bar {
-      0% { transform: scaleX(0); }
-      22% { transform: scaleX(1); }
-      84% { transform: scaleX(1); }
-      94%, 100% { transform: scaleX(0); }
-    }
-    .td-check {
+    .tdc-mono { font-family: ui-monospace, monospace; font-size: 10.5px; }
+    .tdc-cmd { fill: #e6e6e6; }
+    .tdc-prompt { fill: #a6e3a1; }
+    .tdc-key { fill: #7aa2f7; }
+    .tdc-str { fill: #a6e3a1; }
+    .tdc-num { fill: #e0af68; }
+    .tdc-dim { fill: #7b8494; }
+    .tdc-line {
       opacity: 0;
-      animation: td-check 6s ease-in-out infinite;
+      animation: tdc-line 7s ease-in-out infinite;
     }
-    @keyframes td-check {
-      0%, 10% { opacity: 0; }
-      24%, 84% { opacity: 1; }
-      94%, 100% { opacity: 0; }
+    @keyframes tdc-line {
+      0%, 4% { opacity: 0; }
+      8%, 88% { opacity: 1; }
+      96%, 100% { opacity: 0; }
     }
-    .td-dot {
-      opacity: .45;
-      animation: td-dot 1.4s ease-in-out infinite;
+    .tdc-cursor {
+      opacity: 1;
+      animation: tdc-cursor 1.1s steps(1) infinite;
     }
-    @keyframes td-dot {
-      0%, 100% { opacity: .45; }
-      50% { opacity: 1; }
+    @keyframes tdc-cursor {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
     }
     @media (prefers-reduced-motion: reduce) {
-      .td-bar, .td-check, .td-dot { animation: none; }
-      .td-bar { opacity: .55; }
-      .td-check, .td-dot { opacity: 1; }
+      .tdc-line { animation: none; opacity: 1; }
+      .tdc-cursor { animation: none; opacity: 1; }
     }
   </style>
 
-  <rect width="400" height="250" rx="18" fill="#6B61B8"/>
+  <rect width="400" height="250" rx="18" fill="#23272e"/>
+  <rect x="0" y="0" width="400" height="26" fill="#191c22"/>
+  <circle cx="20" cy="13" r="4" fill="#ff5f57"/>
+  <circle cx="36" cy="13" r="4" fill="#febc2e"/>
+  <circle cx="52" cy="13" r="4" fill="#28c840"/>
 
-  <rect x="58" y="34" width="284" height="184" rx="12" fill="#FFFFFF" fill-opacity=".16" stroke="#FFFFFF" stroke-opacity=".7" stroke-width="2"/>
-  <circle cx="76" cy="50" r="3.5" fill="#FFFFFF" opacity=".9"/>
-  <circle cx="90" cy="50" r="3.5" fill="#FFFFFF" opacity=".55"/>
-  <circle cx="104" cy="50" r="3.5" fill="#FFFFFF" opacity=".3"/>
+  <g class="tdc-mono">
+    <g class="tdc-line" style="animation-delay:.1s">
+      <text class="tdc-prompt" x="22" y="48">$</text>
+      <text class="tdc-cmd" x="34" y="48">./bin/taskdock submit --kind smoke --key build-1 --wait</text>
+    </g>
+    <g class="tdc-line" style="animation-delay:.8s">
+      <text x="30" y="68">{"<tspan class="tdc-key">job</tspan>":{"<tspan class="tdc-key">id</tspan>":<tspan class="tdc-num">1</tspan>,"<tspan class="tdc-key">kind</tspan>":"<tspan class="tdc-str">smoke</tspan>"</text>
+    </g>
+    <g class="tdc-line" style="animation-delay:1.1s">
+      <text x="30" y="83">"<tspan class="tdc-key">state</tspan>":"<tspan class="tdc-str">succeeded</tspan>","<tspan class="tdc-key">exit</tspan>":<tspan class="tdc-num">0</tspan>}</text>
+    </g>
 
-  <g fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="86" cy="88" r="7"/>
-    <path class="td-check" d="M82.5 88l2.5 2.5 5-5" style="animation-delay:.5s"/>
-    <circle cx="86" cy="132" r="7"/>
-    <path class="td-check" d="M82.5 132l2.5 2.5 5-5" style="animation-delay:2.1s"/>
+    <g class="tdc-line" style="animation-delay:2s">
+      <text class="tdc-prompt" x="22" y="108">$</text>
+      <text class="tdc-cmd" x="34" y="108">./bin/taskdock metrics</text>
+    </g>
+    <g class="tdc-line" style="animation-delay:2.7s">
+      <text class="tdc-dim" x="30" y="128"># HELP taskdock_jobs Retained jobs by current state.</text>
+      <text x="30" y="145">taskdock_jobs{<tspan class="tdc-key">state</tspan>="<tspan class="tdc-str">queued</tspan>"} <tspan class="tdc-num">0</tspan></text>
+    </g>
+    <g class="tdc-line" style="animation-delay:3.3s">
+      <text x="30" y="162">taskdock_jobs{<tspan class="tdc-key">state</tspan>="<tspan class="tdc-str">running</tspan>"} <tspan class="tdc-num">1</tspan></text>
+    </g>
+    <g class="tdc-line" style="animation-delay:3.9s">
+      <text x="30" y="179">taskdock_jobs{<tspan class="tdc-key">state</tspan>="<tspan class="tdc-str">succeeded</tspan>"} <tspan class="tdc-num">2</tspan></text>
+    </g>
+    <g class="tdc-line" style="animation-delay:4.5s">
+      <text x="30" y="196">taskdock_workers <tspan class="tdc-num">1</tspan></text>
+    </g>
+
+    <g class="tdc-line" style="animation-delay:5.2s">
+      <text class="tdc-prompt" x="22" y="220">$</text>
+      <rect class="tdc-cursor" x="34" y="211" width="6.5" height="12" fill="#e6e6e6"/>
+      <text class="tdc-cursor" x="34" y="220"> </text>
+    </g>
   </g>
-  <circle class="td-dot" cx="86" cy="176" r="7" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
-
-  <rect x="102" y="80" width="118" height="6" rx="3" fill="#FFFFFF" opacity=".9"/>
-  <rect x="102" y="90" width="64" height="5" rx="2.5" fill="#FFFFFF" opacity=".4"/>
-  <rect x="102" y="99" width="150" height="5" rx="2.5" fill="#FFFFFF" opacity=".2"/>
-  <rect class="td-bar" x="102" y="99" width="150" height="5" rx="2.5" fill="#FFFFFF"/>
-
-  <rect x="102" y="124" width="100" height="6" rx="3" fill="#FFFFFF" opacity=".9"/>
-  <rect x="102" y="134" width="78" height="5" rx="2.5" fill="#FFFFFF" opacity=".4"/>
-  <rect x="102" y="143" width="150" height="5" rx="2.5" fill="#FFFFFF" opacity=".2"/>
-  <rect class="td-bar" x="102" y="143" width="150" height="5" rx="2.5" fill="#FFFFFF" style="animation-delay:1.6s"/>
-
-  <rect x="102" y="168" width="128" height="6" rx="3" fill="#FFFFFF" opacity=".9"/>
-  <rect x="102" y="178" width="70" height="5" rx="2.5" fill="#FFFFFF" opacity=".4"/>
-  <rect x="102" y="187" width="150" height="5" rx="2.5" fill="#FFFFFF" opacity=".2"/>
-  <rect class="td-bar" x="102" y="187" width="150" height="5" rx="2.5" fill="#FFFFFF" style="animation-delay:3.2s"/>
 </svg>

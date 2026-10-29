@@ -20,9 +20,12 @@ The site is intentionally built in stages; each phase ends in a push to `main`.
 2. **Phase 2 — Design pass:** simple, clean visual style in the flat palette used
    across my projects (indigo, teal, terracotta, blue on white). Still plain CSS,
    no libraries, no gradients.
-3. **Phase 3 — Animated SVG previews:** hand-written `.svg` animations of each
-   featured application's interface (CSS keyframes inside the SVG, looping
-   automatically) to show what each project actually looks like.
+3. **Phase 3 — Animated SVG previews:** hand-written `.svg` animations re-creating
+   each application's real interface — layout, colors, and text taken from each
+   project's own code (ClipIt's popup, TimeTableGen's timetable grid, Taskdock's
+   CLI, See-My-Speech's transcription tab, Planet Hopper's game). They loop
+   automatically and open in a dialog on click; hover shows the project
+   description.
 4. **Phase 4 — Hosting:** deploy per the hosting tutorial used, or Vercel if the
    chosen host has no instructions.
 
@@ -32,9 +35,10 @@ The site is intentionally built in stages; each phase ends in a push to `main`.
 Portfolio1/
 ├── index.html        # Single-page site: About, Projects, Experience, Contact
 ├── style.css         # Plain CSS, one file
+├── script.js         # Small vanilla script: opens project previews in a dialog
 ├── assets/
 │   ├── photos/       # Photo placeholders, swapped for real photos when available
-│   └── projects/     # Hand-written animated UI previews (SVG) for each project card
+│   └── projects/     # Hand-written looping UI previews (SVG) for each project card
 ├── .gitignore
 └── README.md
 ```
