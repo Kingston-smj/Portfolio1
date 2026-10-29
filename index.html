@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adesola Oluwaseyifunmi Gabriel | Software Engineer</title>
+    <title>Oluwaseyifunmi Adesola Gabriel | Software Engineer</title>
+    <meta name="description" content="Portfolio of Oluwaseyifunmi Adesola Gabriel, Software Engineer — systems, backend, and tooling projects.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
+    <header class="site-header">
+        <nav aria-label="Main navigation">
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -18,35 +19,47 @@
         </nav>
     </header>
 
-    <main>
+    <main id="top">
         <section id="about">
-            <h1>Adesola Oluwaseyifunmi Gabriel</h1>
-            <p>Software Engineer specializing in system reliability, algorithmic optimization, and financial infrastructure.</p>
+            <h1>Oluwaseyifunmi Adesola Gabriel</h1>
+            <p class="tagline">Software Engineer specializing in system reliability, algorithmic optimization, and financial infrastructure.</p>
+            <ul class="photo-strip">
+                <li><img src="assets/photos/photo-1.svg" alt="Placeholder for a photo of Oluwaseyifunmi with friends" width="400" height="300"></li>
+                <li><img src="assets/photos/photo-2.svg" alt="Placeholder for a photo of Oluwaseyifunmi with friends" width="400" height="300"></li>
+                <li><img src="assets/photos/photo-3.svg" alt="Placeholder for a photo of Oluwaseyifunmi with friends" width="400" height="300"></li>
+                <li><img src="assets/photos/photo-4.svg" alt="Placeholder for a photo of Oluwaseyifunmi with friends" width="400" height="300"></li>
+                <li><img src="assets/photos/photo-5.svg" alt="Placeholder for a photo of Oluwaseyifunmi with friends" width="400" height="300"></li>
+            </ul>
         </section>
 
         <section id="projects">
             <h2>Projects</h2>
             <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Vortex</h3>
-                    <p>Complex Telegram-based crypto project launch and wallet management system.</p>
-                </div>
-                <div class="project-card">
-                    <h3>TimeTableGen</h3>
-                    <p>Automated timetable generator using multi-pass constraint-satisfaction algorithms.</p>
-                </div>
-                <div class="project-card">
+                <article class="project-card">
                     <h3>Taskdock</h3>
-                    <p>Linux-based build and test job runner focusing on CI/CD infrastructure.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Summarize</h3>
-                    <p>Chrome Side Panel and CLI tool for media-aware content summarization.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Crypto Marketplace</h3>
-                    <p>Local P2P marketplace using cryptocurrency for monetary exchange.</p>
-                </div>
+                    <p>Single-host build and test job runner in Go. SQLite-backed queue with retries, bounded attempt logs, crash recovery, and Prometheus metrics — the same failure and scheduling problems as larger CI systems, kept deliberately small.</p>
+                    <p class="stack">Go &middot; SQLite &middot; Linux</p>
+                </article>
+                <article class="project-card">
+                    <h3>TimeTableGen</h3>
+                    <p>PyQt6 desktop app that generates full weekly timetables for ~27 secondary-school classes with a multi-pass constraint-satisfaction heuristic, then assigns teachers and surfaces staffing gaps visually.</p>
+                    <p class="stack">Python &middot; PyQt6 &middot; Algorithms</p>
+                </article>
+                <article class="project-card">
+                    <h3>ClipIt</h3>
+                    <p>Lightweight Linux clipboard manager in Qt/C++ bringing a Win+V-style history to Wayland, with bounded memory usage, pinned and editable entries, duplicate prevention, and emoji/kaomoji/symbol pickers in a tabbed popup. Packaged for Ubuntu testers.</p>
+                    <p class="stack">C++ &middot; Qt6 &middot; Linux</p>
+                </article>
+                <article class="project-card">
+                    <h3>See-My-Speech</h3>
+                    <p>Desktop audio transcription with OpenAI Whisper behind a PyQt interface for Linux and Windows. Core functionality, UI components, and worker threads keep the interface responsive through long transcription jobs.</p>
+                    <p class="stack">Python &middot; PyQt &middot; Whisper</p>
+                </article>
+                <article class="project-card">
+                    <h3>Farcade</h3>
+                    <p>Farcaster mini-game work: finished a doodle-jump-style contest game in Phaser, plus an original CSS/DOM version that runs entirely without canvas, after resolving rotation and frame-integration issues.</p>
+                    <p class="stack">JavaScript &middot; Phaser &middot; CSS</p>
+                </article>
             </div>
         </section>
 
@@ -61,7 +74,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Adesola Oluwaseyifunmi Gabriel</p>
+        <p>&copy; 2026 Oluwaseyifunmi Adesola Gabriel</p>
     </footer>
 </body>
 </html>

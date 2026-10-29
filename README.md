@@ -1,6 +1,6 @@
 # Portfolio Website
 
-Single-page personal portfolio website for **Adesola Oluwaseyifunmi Gabriel** — Software
+Single-page personal portfolio website for **Oluwaseyifunmi Adesola Gabriel** — Software
 Engineer (backend, Linux systems, and software testing focus).
 
 Built from scratch with plain HTML and CSS (vanilla JS only if a feature actually
@@ -15,10 +15,11 @@ GitHub profile: <https://github.com/Kingston-smj/>
 
 The site is intentionally built in stages; each phase ends in a push to `main`.
 
-1. **Phase 1 — Vanilla skeleton:** semantic single-page layout and plain
-   CSS, with content from my CVs and repositories.
-2. **Phase 2 — Design pass:** apply my usual simple, clean visual style (still no
-   libraries, no neon gradients).
+1. **Phase 1 — Vanilla skeleton:** semantic single-page layout with content from
+   my CVs and repositories.
+2. **Phase 2 — Design pass:** simple, clean visual style in the flat palette used
+   across my projects (indigo, teal, terracotta, blue on white). Still plain CSS,
+   no libraries, no gradients.
 3. **Phase 3 — Animated SVG previews:** hand-written `.svg` animations of each
    featured application's interface (CSS keyframes inside the SVG, looping
    automatically) to show what each project actually looks like.
@@ -31,22 +32,24 @@ The site is intentionally built in stages; each phase ends in a push to `main`.
 Portfolio1/
 ├── index.html        # Single-page site: About, Projects, Experience, Contact
 ├── style.css         # Plain CSS, one file
+├── assets/
+│   └── photos/       # Photo placeholders, swapped for real photos when available
 ├── .gitignore
 └── README.md
 ```
 
 ## Featured projects
 
-- **Taskdock** — single-host build/test job runner in Go with SQLite queueing,
-  retries, crash recovery, and bounded logs.
+- **ClipIt** — Linux clipboard manager in Qt/C++ with a Win+V-style history popup
+  for Wayland, pinned entries, pickers, and Ubuntu packaging for testers.
 - **TimeTableGen** — PyQt6 automatic school timetable generator using a multi-pass
   constraint-satisfaction heuristic (~27 classes, sub-second generation).
-- **Summarize** — Chrome side panel + CLI for URL, file, and media summarisation,
-  with YouTube slide extraction and streaming output.
-- **Vortex** — Telegram bot for crypto project launch management (wallet generation
-  and metadata flows, SQLite-backed).
-- **Crypto Marketplace** — Flask + SQLAlchemy peer-to-peer marketplace with crypto
-  payment flows (private repo).
+- **Taskdock** — single-host build/test job runner in Go with SQLite queueing,
+  retries, crash recovery, and bounded logs.
+- **See-My-Speech** — desktop audio transcription with Whisper behind a PyQt
+  interface for Linux and Windows, using worker threads to keep the UI responsive.
+- **Farcade** — Farcaster mini-game built with Phaser, plus an original CSS/DOM
+  version of the same game.
 
 ## Running it locally
 
